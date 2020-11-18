@@ -394,6 +394,12 @@ header {
     position: relative;
     z-index: 2;
   }
+
+  .about-me__body p {
+    max-width: 700px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* My Work Section */
