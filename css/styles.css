@@ -23,6 +23,7 @@
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
   --fs-h3: 1.25rem;
+  --fs-p: 1.15rem
   --fs-body: 1rem;
 
   /* Box Shadow */
@@ -36,6 +37,7 @@
     --fs-h1: 4.5rem;
     --fs-h2: 3.75rem;
     --fs-h3: 1.5rem;
+    
     --fs-body: 1.125rem;
   }
 }
@@ -106,6 +108,10 @@ h2 {
 }
 h3 {
   font-size: var(--fs-h3);
+}
+
+p {
+  font-size: var(--fs-p);
 }
 
 .section__title {
@@ -237,7 +243,7 @@ h3 {
 
 .about-me__img {
   box-shadow: var(--bs);
-  width: 244px;
+  width: 300px;
   height: 406px;
 }
 
@@ -271,4 +277,5 @@ h3 {
     position: relative;
     z-index: 2;
   }
+
 }
