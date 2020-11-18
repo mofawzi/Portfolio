@@ -7,12 +7,12 @@
 /* Custom Properties */
 :root {
   /* Font Family */
-  --ff-primary: "Source Sans Pro", sans-serif;
-  --ff-secondary: "Source Code Pro", monospace;
+  --ff-primary: "Lora", serif;
+  --ff-secondary: "Roboto Slab", serif;
 
   /* Font weight */
-  --fw-reg: 300;
-  --fw-bold: 900;
+  --fw-reg: 400;
+  --fw-bold: 700;
 
   /* Colors */
   --clr-light: #fff;
@@ -154,6 +154,13 @@ header {
 
 .logo {
   max-width: 100px;
+  position: fixed;
+  top: -5px;
+}
+
+.logo:hover {
+  animation: Rotate 1s;
+  cursor: pointer;
 }
 
 .nav {
@@ -480,4 +487,18 @@ header {
 
 .social-list__link {
   padding: 0.5em;
+}
+
+/* Key Frames */
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
