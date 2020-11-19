@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger Builder | Info</title>
+    <!-- Css Styling -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Supporting different browsers -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+    />
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo" />
+      </div>
+      <!-- Toggler button -->
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#services" class="nav__link">My Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#about" class="nav__link">About Me</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#work" class="nav__link">My Work</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro" id="home">
+      <h1 class="section__title section__title--intro">
+        <strong>Burger Builder</strong>
+      </h1>
+      <p class="section__subtitle section__subtitle--intro">
+        Front End - React Project
+      </p>
+      <img src="img/portfolio-04.png" alt="DevBook Icon" class="intro__img" />
+    </section>
+
+    <!-- Project Details -->
+
+    <div class="portfolio-item-individual">
+      <h3 class="portfolio-item-individual__header">Description</h3>
+      <p>
+        A Burger ordering website built with ReactJS. <br />
+        User has the ability to signup, signin, design, edit and place an order
+        to his created burger. <br />
+        User has to signin to be able to view his/her orders and be able to
+        place an order. <br />
+        The user can add his/her address information for delivery and can choose
+        from different delivery options.
+      </p>
+      <img
+        src="img/portfolio-03.png"
+        alt="DevBook Landing picture"
+        class="portfolio-item-individual__img"
+      />
+
+      <h3 class="portfolio-item-individual__header">Technologies Used</h3>
+      <ul class="portfolio-item-individual__techs-list">
+        <li>ReactJS</li>
+        <li>Firebase</li>
+        <li>Redux</li>
+        <li>Axios</li>
+        <li>Bootstrap</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+      </ul>
+
+      <ul class="portfolio-item-individual__links-list">
+        <li>
+          <h3 class="portfolio-item-individual__header">
+            <i class="fab fa-github"> </i> Github Link:
+            <a
+              href="https://github.com/mofawzi/burger-builder"
+              class="social-list__link"
+              target="_blank"
+              >Burger Builder</a
+            >
+          </h3>
+        </li>
+
+        <li>
+          <h3 class="portfolio-item-individual__header">
+            <i class="fab fa-codepen"></i>
+            Website Link:
+            <a
+              href="https://my-burger-0128.web.app/"
+              class="social-list__link"
+              target="_blank"
+              >Burger Builder</a
+            >
+          </h3>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="mailto:mofawzy1996@gmail.com" class="footer__link"
+        >mofawzy1996@gmail.com</a
+      >
+
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a
+            href="https://www.linkedin.com/in/mohamed-fawzi/"
+            class="social-list__link"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+
+        <li class="social-list__item">
+          <a
+            href="https://twitter.com/Mohamed_Fawzi96"
+            class="social-list__link"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+
+        <li class="social-list__item">
+          <a
+            href="https://www.instagram.com/fawzinooo/"
+            class="social-list__link"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+
+        <li class="social-list__item">
+          <a href="https://github.com/mofawzi" class="social-list__link"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
