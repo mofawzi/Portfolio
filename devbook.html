@@ -26,149 +26,152 @@
   </head>
 
   <body>
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo" />
-      </div>
-      <!-- Toggler button -->
-      <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="index.html" class="nav__link">Home</a>
+    <div class="profile__item--wrapper">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
+        </div>
+        <!-- Toggler button -->
+        <button class="nav-toggle" aria-label="toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#services" class="nav__link">My Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#about" class="nav__link">About Me</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#work" class="nav__link">My Work</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Intro -->
+      <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+          <strong>DevBook</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">
+          MERN Stack Project
+        </p>
+        <img src="img/portfolio-02.png" alt="DevBook Icon" class="intro__img" />
+      </section>
+
+      <!-- Project Details -->
+
+      <div class="portfolio-item-individual">
+        <h3 class="portfolio-item-individual__header">Description</h3>
+        <p>
+          A social network for developers - A full stack web application, built
+          with MERN stack technologies. <br />
+          User can have a detailed profile includes all of his/her personal
+          information, experiences and educations. <br />
+          User can add posts and and share it with the other users. Also can
+          like, unlike and comment to other users' posts.<br />
+          Can also add his/her experiences and educations, user can add his/her
+          github user name to get the latest 5 created github repositories.
+          <br />
+          Also can connect his/her social links like facebook, twitter,
+          linkedin, instagram, and youtube.
+        </p>
+        <img
+          src="img/portfolio-01.png"
+          alt="DevBook Landing picture"
+          class="portfolio-item-individual__img"
+        />
+
+        <h3 class="portfolio-item-individual__header">Technologies Used</h3>
+        <ul class="portfolio-item-individual__techs-list">
+          <li>NodeJS</li>
+          <li>ReactJS</li>
+          <li>MongoDB</li>
+          <li>Express</li>
+          <li>Redux</li>
+          <li>Axios</li>
+          <li>Bootstrap</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+        <p>
+          <strong> Note: </strong> A user need to sign up with a connected to
+          Gravatar Email to be able to have a profile picture.
+        </p>
+
+        <ul class="portfolio-item-individual__links-list">
+          <li>
+            <h3 class="portfolio-item-individual__header">
+              <i class="fab fa-github"> </i> Github Link:
+              <a
+                href="https://github.com/mofawzi/DevBook"
+                class="social-list__link"
+                target="_blank"
+                >DevBook</a
+              >
+            </h3>
           </li>
-          <li class="nav__item">
-            <a href="index.html#services" class="nav__link">My Services</a>
-          </li>
-          <li class="nav__item">
-            <a href="index.html#about" class="nav__link">About Me</a>
-          </li>
-          <li class="nav__item">
-            <a href="index.html#work" class="nav__link">My Work</a>
+
+          <li>
+            <h3 class="portfolio-item-individual__header">
+              <i class="fab fa-codepen"></i>
+              Website Link:
+              <a
+                href="https://dev-book-2019.herokuapp.com/"
+                class="social-list__link"
+                target="_blank"
+                >DevBook</a
+              >
+            </h3>
           </li>
         </ul>
-      </nav>
-    </header>
+      </div>
 
-    <!-- Intro -->
-    <section class="intro" id="home">
-      <h1 class="section__title section__title--intro">
-        <strong>DevBook</strong>
-      </h1>
-      <p class="section__subtitle section__subtitle--intro">
-        MERN Stack Project
-      </p>
-      <img src="img/portfolio-02.png" alt="DevBook Icon" class="intro__img" />
-    </section>
+      <!-- Footer -->
+      <footer class="footer">
+        <a href="mailto:mofawzy1996@gmail.com" class="footer__link"
+          >mofawzy1996@gmail.com</a
+        >
 
-    <!-- Project Details -->
-
-    <div class="portfolio-item-individual">
-      <h3 class="portfolio-item-individual__header">Description</h3>
-      <p>
-        A social network for developers - A full stack web application, built
-        with MERN stack technologies. <br />
-        User can have a detailed profile includes all of his/her personal
-        information, experiences and educations. <br />
-        User can add posts and and share it with the other users. Also can like,
-        unlike and comment to other users' posts.<br />
-        Can also add his/her experiences and educations, user can add his/her
-        github user name to get the latest 5 created github repositories. <br />
-        Also can connect his/her social links like facebook, twitter, linkedin,
-        instagram, and youtube.
-      </p>
-      <img
-        src="img/portfolio-01.png"
-        alt="DevBook Landing picture"
-        class="portfolio-item-individual__img"
-      />
-
-      <h3 class="portfolio-item-individual__header">Technologies Used</h3>
-      <ul class="portfolio-item-individual__techs-list">
-        <li>NodeJS</li>
-        <li>ReactJS</li>
-        <li>MongoDB</li>
-        <li>Express</li>
-        <li>Redux</li>
-        <li>Axios</li>
-        <li>Bootstrap</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-      <p>
-        <strong> Note: </strong> A user need to sign up with a connected to
-        Gravatar Email to be able to have a profile picture.
-      </p>
-
-      <ul class="portfolio-item-individual__links-list">
-        <li>
-          <h3 class="portfolio-item-individual__header">
-            <i class="fab fa-github"> </i> Github Link:
+        <ul class="social-list">
+          <li class="social-list__item">
             <a
-              href="https://github.com/mofawzi/DevBook"
+              href="https://www.linkedin.com/in/mohamed-fawzi/"
               class="social-list__link"
-              target="_blank"
-              >DevBook</a
-            >
-          </h3>
-        </li>
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </li>
 
-        <li>
-          <h3 class="portfolio-item-individual__header">
-            <i class="fab fa-codepen"></i>
-            Website Link:
+          <li class="social-list__item">
             <a
-              href="https://dev-book-2019.herokuapp.com/"
+              href="https://twitter.com/Mohamed_Fawzi96"
               class="social-list__link"
-              target="_blank"
-              >DevBook</a
-            >
-          </h3>
-        </li>
-      </ul>
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
+
+          <li class="social-list__item">
+            <a
+              href="https://www.instagram.com/fawzinooo/"
+              class="social-list__link"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+
+          <li class="social-list__item">
+            <a href="https://github.com/mofawzi" class="social-list__link"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+        </ul>
+      </footer>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <a href="mailto:mofawzy1996@gmail.com" class="footer__link"
-        >mofawzy1996@gmail.com</a
-      >
-
-      <ul class="social-list">
-        <li class="social-list__item">
-          <a
-            href="https://www.linkedin.com/in/mohamed-fawzi/"
-            class="social-list__link"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </li>
-
-        <li class="social-list__item">
-          <a
-            href="https://twitter.com/Mohamed_Fawzi96"
-            class="social-list__link"
-            ><i class="fab fa-twitter"></i
-          ></a>
-        </li>
-
-        <li class="social-list__item">
-          <a
-            href="https://www.instagram.com/fawzinooo/"
-            class="social-list__link"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </li>
-
-        <li class="social-list__item">
-          <a href="https://github.com/mofawzi" class="social-list__link"
-            ><i class="fab fa-github"></i
-          ></a>
-        </li>
-      </ul>
-    </footer>
 
     <script src="js/index.js"></script>
   </body>

@@ -25,113 +25,114 @@
     />
   </head>
 
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo" />
+  <body class="profile__item--background">
+    <div class="profile__item--wrapper">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
+        </div>
+        <!-- Toggler button -->
+        <button class="nav-toggle" aria-label="toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#services" class="nav__link">My Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#about" class="nav__link">About Me</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#work" class="nav__link">My Work</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Intro -->
+      <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+          <strong>Loruki Cloud</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">
+          <strong>Fake</strong> Cloud Hosting Project
+        </p>
+        <img src="img/portfolio-05.png" alt="Loruki Icon" class="intro__img" />
+      </section>
+
+      <!-- Project Details -->
+
+      <div class="portfolio-item-individual">
+        <h3 class="portfolio-item-individual__header">Description</h3>
+        <p>
+          A fake cloud hosting website, built with HTML 5, CSS 3 and Javascript.
+          <br />
+          This is just the UI of the website that works with some animations
+          but, has no working functionalities.
+        </p>
+
+        <img
+          src="img/portfolio-07.png"
+          alt="Loruki Icon"
+          class="portfolio-item-individual__img"
+        />
+        <img
+          src="img/portfolio-10.png"
+          alt="Loruki Icon"
+          class="portfolio-item-individual__img"
+        />
+        <h3 class="portfolio-item-individual__header">Technologies Used</h3>
+        <ul class="portfolio-item-individual__techs-list">
+          <li>HTML 5</li>
+          <li>CSS 3</li>
+          <li>Javascript</li>
+        </ul>
       </div>
-      <!-- Toggler button -->
-      <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="index.html" class="nav__link">Home</a>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <a href="mailto:mofawzy1996@gmail.com" class="footer__link"
+          >mofawzy1996@gmail.com</a
+        >
+
+        <ul class="social-list">
+          <li class="social-list__item">
+            <a
+              href="https://www.linkedin.com/in/mohamed-fawzi/"
+              class="social-list__link"
+              ><i class="fab fa-linkedin"></i
+            ></a>
           </li>
-          <li class="nav__item">
-            <a href="index.html#services" class="nav__link">My Services</a>
+
+          <li class="social-list__item">
+            <a
+              href="https://twitter.com/Mohamed_Fawzi96"
+              class="social-list__link"
+              ><i class="fab fa-twitter"></i
+            ></a>
           </li>
-          <li class="nav__item">
-            <a href="index.html#about" class="nav__link">About Me</a>
+
+          <li class="social-list__item">
+            <a
+              href="https://www.instagram.com/fawzinooo/"
+              class="social-list__link"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </li>
-          <li class="nav__item">
-            <a href="index.html#work" class="nav__link">My Work</a>
+
+          <li class="social-list__item">
+            <a href="https://github.com/mofawzi" class="social-list__link"
+              ><i class="fab fa-github"></i
+            ></a>
           </li>
         </ul>
-      </nav>
-    </header>
-
-    <!-- Intro -->
-    <section class="intro" id="home">
-      <h1 class="section__title section__title--intro">
-        <strong>Loruki Cloud</strong>
-      </h1>
-      <p class="section__subtitle section__subtitle--intro">
-        <strong>Fake</strong> Cloud Hosting Project
-      </p>
-      <img src="img/portfolio-05.png" alt="Loruki Icon" class="intro__img" />
-    </section>
-
-    <!-- Project Details -->
-
-    <div class="portfolio-item-individual">
-      <h3 class="portfolio-item-individual__header">Description</h3>
-      <p>
-        A fake cloud hosting website, built with HTML 5, CSS 3 and Javascript.
-        <br />
-        This is just the UI of the website that works with some animations but,
-        has no working functionalities.
-      </p>
-
-      <img
-        src="img/portfolio-07.png"
-        alt="Loruki Icon"
-        class="portfolio-item-individual__img"
-      />
-      <img
-        src="img/portfolio-10.png"
-        alt="Loruki Icon"
-        class="portfolio-item-individual__img"
-      />
-      <h3 class="portfolio-item-individual__header">Technologies Used</h3>
-      <ul class="portfolio-item-individual__techs-list">
-        <li>HTML 5</li>
-        <li>CSS 3</li>
-        <li>Javascript</li>
-      </ul>
+      </footer>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <a href="mailto:mofawzy1996@gmail.com" class="footer__link"
-        >mofawzy1996@gmail.com</a
-      >
-
-      <ul class="social-list">
-        <li class="social-list__item">
-          <a
-            href="https://www.linkedin.com/in/mohamed-fawzi/"
-            class="social-list__link"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </li>
-
-        <li class="social-list__item">
-          <a
-            href="https://twitter.com/Mohamed_Fawzi96"
-            class="social-list__link"
-            ><i class="fab fa-twitter"></i
-          ></a>
-        </li>
-
-        <li class="social-list__item">
-          <a
-            href="https://www.instagram.com/fawzinooo/"
-            class="social-list__link"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </li>
-
-        <li class="social-list__item">
-          <a href="https://github.com/mofawzi" class="social-list__link"
-            ><i class="fab fa-github"></i
-          ></a>
-        </li>
-      </ul>
-    </footer>
-
     <script src="js/index.js"></script>
   </body>
 </html>
