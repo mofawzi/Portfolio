@@ -515,6 +515,18 @@ header {
 
 /* Individual portfolio items styles */
 
+.profile__item--wrapper {
+  /* Background img */
+
+  background-image: url("../img/nature.jpg");
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .portfolio-item-individual {
   padding: 0 2em 2em;
   max-width: 1200px;
