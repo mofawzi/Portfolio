@@ -546,7 +546,7 @@ header {
 .profile__item--wrapper {
   /* Background img */
 
-  background-image: url("../img/nature.jpg");
+  background-image: url("../img/items-back.jpg");
   height: 100%;
   width: 100%;
   background-attachment: fixed;
