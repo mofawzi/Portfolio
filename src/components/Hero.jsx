@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data/resume';
+import AnimatedBackground from './AnimatedBackground';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 pt-24 sm:pt-20">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 pt-24 sm:pt-20 overflow-hidden">
+      <AnimatedBackground />
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
