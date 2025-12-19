@@ -7,7 +7,6 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import DarkModeToggle from './components/DarkModeToggle';
 import { personalInfo } from './data/resume';
 
 function App() {
@@ -25,8 +24,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-        <Navbar />
-        <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
         <Hero />
         <About />
