@@ -1,18 +1,10 @@
-@import "tailwindcss";
-
-@theme {
-  --color-*: initial;
-  --color-primary: #3b82f6;
-  --color-primary-hover: #2563eb;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.dark {
-  color-scheme: dark;
 }
