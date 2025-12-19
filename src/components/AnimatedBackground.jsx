@@ -12,10 +12,10 @@ const AnimatedBackground = () => {
   }));
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Gradient orbs */}
       <motion.div
-        className="absolute top-0 -left-40 w-80 h-80 bg-blue-500 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-20 dark:opacity-10"
+        className="absolute top-0 -left-40 w-80 h-80 bg-blue-500 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-30 dark:opacity-10"
         animate={{
           x: [0, 100, 0],
           y: [0, 50, 0],
@@ -28,7 +28,7 @@ const AnimatedBackground = () => {
         }}
       />
       <motion.div
-        className="absolute top-40 -right-40 w-80 h-80 bg-purple-500 dark:bg-purple-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-20 dark:opacity-10"
+        className="absolute top-40 -right-40 w-80 h-80 bg-purple-500 dark:bg-purple-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-30 dark:opacity-10"
         animate={{
           x: [0, -100, 0],
           y: [0, 100, 0],
@@ -41,7 +41,7 @@ const AnimatedBackground = () => {
         }}
       />
       <motion.div
-        className="absolute -bottom-32 left-1/2 w-80 h-80 bg-pink-500 dark:bg-pink-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-20 dark:opacity-10"
+        className="absolute -bottom-32 left-1/2 w-80 h-80 bg-pink-500 dark:bg-pink-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-30 dark:opacity-10"
         animate={{
           x: [0, -50, 0],
           y: [0, -50, 0],
@@ -58,7 +58,7 @@ const AnimatedBackground = () => {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-blue-400 dark:bg-blue-300 opacity-30 dark:opacity-20"
+          className="absolute rounded-full bg-blue-400 dark:bg-blue-300 opacity-40 dark:opacity-20"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -81,7 +81,7 @@ const AnimatedBackground = () => {
 
       {/* Geometric grid lines */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-5 dark:opacity-10"
+        className="absolute inset-0 w-full h-full opacity-8 dark:opacity-10"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -105,9 +105,9 @@ const AnimatedBackground = () => {
 
       {/* Animated gradient overlay */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 dark:from-blue-900/20 dark:via-transparent dark:to-purple-900/20"
+        className="absolute inset-0 bg-gradient-to-br from-blue-50/70 via-transparent to-purple-50/70 dark:from-blue-900/20 dark:via-transparent dark:to-purple-900/20"
         animate={{
-          opacity: [0.3, 0.6, 0.3],
+          opacity: [0.5, 0.8, 0.5],
         }}
         transition={{
           duration: 8,

@@ -7,6 +7,7 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import AnimatedBackground from './components/AnimatedBackground';
 import { personalInfo } from './data/resume';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+        <AnimatedBackground />
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
         <Hero />
@@ -34,7 +36,7 @@ function App() {
         <Projects />
         <Contact />
 
-        <footer className="bg-gray-100 dark:bg-gray-800 py-6 text-center text-gray-600 dark:text-gray-400">
+        <footer className="relative z-10 bg-gray-100 dark:bg-gray-800 py-6 text-center text-gray-600 dark:text-gray-400">
           <p>&copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
         </footer>
       </div>
