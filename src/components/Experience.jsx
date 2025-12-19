@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
+import { experiences } from '../data/resume';
 
 const Experience = () => {
-  const experiences = [
-    // This will be populated with your resume data
-  ];
 
   return (
     <section id="experience" className="py-20 px-6">
@@ -36,7 +34,7 @@ const Experience = () => {
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {exp.title}
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 mb-2">{exp.company}</p>
+                <p className="text-blue-600 dark:text-blue-400 mb-1">{exp.company} • {exp.location}</p>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">{exp.period}</p>
                 <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
                   {exp.responsibilities?.map((resp, idx) => (

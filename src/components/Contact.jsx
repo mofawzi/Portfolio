@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { personalInfo } from '../data/resume';
 
 const Contact = () => {
   return (
@@ -27,7 +28,7 @@ const Contact = () => {
 
           <div className="flex flex-wrap gap-4 justify-center">
             <motion.a
-              href="mailto:your.email@example.com"
+              href={`mailto:${personalInfo.email}`}
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -40,7 +41,7 @@ const Contact = () => {
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com/in/yourprofile"
+              href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-colors inline-flex items-center gap-2"
@@ -51,7 +52,7 @@ const Contact = () => {
             </motion.a>
 
             <motion.a
-              href="https://github.com/yourusername"
+              href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-colors inline-flex items-center gap-2"

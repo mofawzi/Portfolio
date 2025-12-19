@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { personalInfo } from '../data/resume';
 
 const About = () => {
   return (
@@ -21,8 +22,8 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Add your about information here. This section will be updated with your resume data.
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg text-center">
+            {personalInfo.summary}
           </p>
         </motion.div>
       </div>

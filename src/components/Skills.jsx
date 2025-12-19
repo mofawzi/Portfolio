@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
+import { skillCategories } from '../data/resume';
 
 const Skills = () => {
-  const skillCategories = [
-    // This will be populated with your resume data
-  ];
 
   return (
     <section id="skills" className="py-20 px-6">
