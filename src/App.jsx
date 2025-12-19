@@ -4,6 +4,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 import DarkModeToggle from './components/DarkModeToggle';
 import { personalInfo } from './data/resume';
@@ -21,6 +22,7 @@ function App() {
         <Experience />
         <Education />
         <Skills />
+        <Projects />
         <Contact />
 
         <footer className="bg-gray-100 dark:bg-gray-800 py-6 text-center text-gray-600 dark:text-gray-400">

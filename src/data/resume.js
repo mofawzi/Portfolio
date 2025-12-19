@@ -113,3 +113,48 @@ export const languages = [
   "Arabic (Native)",
   "English (Advanced)"
 ];
+
+export const projects = [
+  {
+    name: "Shopilla",
+    description: "eCommerce platform built with the MERN stack & Redux",
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "Redux"],
+    link: "https://github.com/mofawzi/shopilla",
+    github: "https://github.com/mofawzi/shopilla"
+  },
+  {
+    name: "Kanban Board",
+    description: "Kanban board with drag & drop functionality using Angular CDK",
+    technologies: ["Angular", "TypeScript", "Angular CDK"],
+    link: "https://github.com/mofawzi/Kanban-angular-drag-drop",
+    github: "https://github.com/mofawzi/Kanban-angular-drag-drop"
+  },
+  {
+    name: "Angular Task Tracker",
+    description: "A simple app to keep track of your tasks",
+    technologies: ["Angular", "TypeScript"],
+    link: "https://github.com/mofawzi/angular-task-tracker",
+    github: "https://github.com/mofawzi/angular-task-tracker"
+  },
+  {
+    name: "Item Catalog",
+    description: "Udacity Full Stack Nanodegree Project - Web application for managing categorized items",
+    technologies: ["Python", "Flask", "SQL"],
+    link: "https://github.com/mofawzi/Item-Catalog",
+    github: "https://github.com/mofawzi/Item-Catalog"
+  },
+  {
+    name: "Netflix Clone",
+    description: "Netflix UI clone built with React",
+    technologies: ["React", "JavaScript", "CSS"],
+    link: "https://github.com/mofawzi/netflix-clone-react",
+    github: "https://github.com/mofawzi/netflix-clone-react"
+  },
+  {
+    name: "Burger Builder",
+    description: "Interactive burger customization app built with React",
+    technologies: ["React", "JavaScript"],
+    link: "https://github.com/mofawzi/burger-builder",
+    github: "https://github.com/mofawzi/burger-builder"
+  }
+];
