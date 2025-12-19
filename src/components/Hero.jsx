@@ -3,7 +3,7 @@ import { personalInfo } from '../data/resume';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 pt-24 sm:pt-20">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -11,7 +11,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -20,7 +20,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-4"
+            className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
