@@ -3,7 +3,7 @@ import { personalInfo } from '../data/resume';
 
 const Contact = () => {
   return (
-    <section id="contact" className="relative py-20 px-6 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm z-10">
+    <section id="contact" className="relative py-20 px-6 bg-gray-50/40 dark:bg-gray-900/40 z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"

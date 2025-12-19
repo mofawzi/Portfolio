@@ -81,7 +81,7 @@ const AnimatedBackground = () => {
 
       {/* Geometric grid lines */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-15 dark:opacity-8"
+        className="absolute inset-0 w-full h-full opacity-50 dark:opacity-8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>

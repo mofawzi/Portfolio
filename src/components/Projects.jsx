@@ -3,7 +3,7 @@ import { projects } from '../data/resume';
 
 const Projects = () => {
   return (
-    <section id="projects" className="relative py-20 px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm z-10">
+    <section id="projects" className="relative py-20 px-6 bg-white/40 dark:bg-gray-800/40 z-10">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
