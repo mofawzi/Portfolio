@@ -7,7 +7,7 @@ const Education = () => {
     <section id="education" className="relative py-20 px-6 bg-gray-50/40 dark:bg-gray-900/40 z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+          className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -31,13 +31,13 @@ const Education = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
                   {edu.degree}
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 mb-2">{edu.institution}</p>
-                <p className="text-gray-600 dark:text-gray-400">{edu.period}</p>
+                <p className="text-lg text-blue-600 dark:text-blue-400 mb-2">{edu.institution}</p>
+                <p className="text-base text-gray-600 dark:text-gray-400">{edu.period}</p>
                 {edu.gpa && (
-                  <p className="text-gray-700 dark:text-gray-300 mt-2">GPA: {edu.gpa}</p>
+                  <p className="text-base text-gray-700 dark:text-gray-300 mt-2">GPA: {edu.gpa}</p>
                 )}
               </motion.div>
             ))

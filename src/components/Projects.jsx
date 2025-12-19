@@ -6,7 +6,7 @@ const Projects = () => {
     <section id="projects" className="relative py-20 px-6 bg-white/40 dark:bg-gray-800/40 z-10">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+          className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,17 +27,17 @@ const Projects = () => {
               whileHover={{ y: -5 }}
             >
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-3">
                   {project.name}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies?.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded text-sm"
+                      className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded text-base"
                     >
                       {tech}
                     </span>

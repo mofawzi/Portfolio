@@ -7,7 +7,7 @@ const Skills = () => {
     <section id="skills" className="relative py-20 px-6 bg-white/40 dark:bg-gray-800/40 z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+          className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -31,14 +31,14 @@ const Skills = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
                   {category.name}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills?.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm"
+                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-base"
                     >
                       {skill}
                     </span>

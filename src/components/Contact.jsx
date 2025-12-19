@@ -6,7 +6,7 @@ const Contact = () => {
     <section id="contact" className="relative py-20 px-6 bg-gray-50/40 dark:bg-gray-900/40 z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+          className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -22,7 +22,7 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
             I'm always open to new opportunities and collaborations. Feel free to reach out!
           </p>
 
