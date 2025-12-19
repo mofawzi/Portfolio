@@ -4,7 +4,7 @@ import { education } from '../data/resume';
 const Education = () => {
 
   return (
-    <section id="education" className="py-20 px-6 bg-gray-50 dark:bg-gray-800">
+    <section id="education" className="relative py-20 px-6 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
@@ -25,7 +25,7 @@ const Education = () => {
             education.map((edu, index) => (
               <motion.div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}

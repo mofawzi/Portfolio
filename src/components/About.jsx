@@ -3,7 +3,7 @@ import { personalInfo } from '../data/resume';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 px-6 bg-gray-50 dark:bg-gray-800">
+    <section id="about" className="relative py-20 px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center"
