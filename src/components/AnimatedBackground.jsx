@@ -54,11 +54,11 @@ const AnimatedBackground = () => {
         }}
       />
 
-      {/* Floating particles */}
+      {/* Floating particles (squares) */}
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 dark:from-blue-300 dark:to-cyan-300 opacity-50 dark:opacity-25"
+          className="absolute bg-gradient-to-br from-blue-400 to-cyan-400 dark:from-blue-300 dark:to-cyan-300 opacity-20 dark:opacity-10"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -68,7 +68,7 @@ const AnimatedBackground = () => {
           animate={{
             y: [0, -30, 0],
             x: [0, Math.random() * 20 - 10, 0],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.15, 0.25, 0.15],
           }}
           transition={{
             duration: particle.duration,
