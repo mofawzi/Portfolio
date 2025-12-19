@@ -68,7 +68,7 @@ const AnimatedBackground = () => {
           animate={{
             y: [0, -30, 0],
             x: [0, Math.random() * 20 - 10, 0],
-            opacity: [0.15, 0.25, 0.15],
+            opacity: [0.3, 0.6, 0.3],
           }}
           transition={{
             duration: particle.duration,
@@ -81,7 +81,7 @@ const AnimatedBackground = () => {
 
       {/* Geometric grid lines */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-10 dark:opacity-5"
+        className="absolute inset-0 w-full h-full opacity-15 dark:opacity-8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
