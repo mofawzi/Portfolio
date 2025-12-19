@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -12,9 +12,18 @@ import { personalInfo } from './data/resume';
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
+  useEffect(() => {
+    // Set dark class on document root for Tailwind v4
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <>
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
         <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
 
         <Hero />
@@ -29,7 +38,7 @@ function App() {
           <p>&copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
         </footer>
       </div>
-    </div>
+    </>
   );
 }
 
