@@ -1,14 +1,18 @@
 import { motion } from 'framer-motion';
 
 const AnimatedBackground = () => {
+  // Reduce particles on mobile for better performance
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const particleCount = isMobile ? 8 : 15;
+
   // Generate floating particles
-  const particles = Array.from({ length: 20 }, (_, i) => ({
+  const particles = Array.from({ length: particleCount }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
     size: Math.random() * 4 + 2,
     duration: Math.random() * 10 + 20,
-    delay: Math.random() * 5,
+    delay: Math.random() * 2, // Reduced delay for faster start
   }));
 
   return (
@@ -16,6 +20,8 @@ const AnimatedBackground = () => {
       {/* Gradient orbs */}
       <motion.div
         className="absolute top-0 -left-40 w-96 h-96 bg-gradient-to-br from-blue-400 to-cyan-300 dark:from-blue-600 dark:to-blue-800 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-40 dark:opacity-20"
+        style={{ willChange: 'transform' }}
+        initial={{ x: 0, y: 0, scale: 1 }}
         animate={{
           x: [0, 100, 0],
           y: [0, 50, 0],
@@ -29,6 +35,8 @@ const AnimatedBackground = () => {
       />
       <motion.div
         className="absolute top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-300 dark:from-purple-600 dark:to-purple-800 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-40 dark:opacity-20"
+        style={{ willChange: 'transform' }}
+        initial={{ x: 0, y: 0, scale: 1 }}
         animate={{
           x: [0, -100, 0],
           y: [0, 100, 0],
@@ -42,6 +50,8 @@ const AnimatedBackground = () => {
       />
       <motion.div
         className="absolute -bottom-32 left-1/2 w-96 h-96 bg-gradient-to-br from-amber-300 to-orange-300 dark:from-pink-600 dark:to-pink-800 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-35 dark:opacity-15"
+        style={{ willChange: 'transform' }}
+        initial={{ x: 0, y: 0, scale: 1 }}
         animate={{
           x: [0, -50, 0],
           y: [0, -50, 0],
@@ -64,7 +74,9 @@ const AnimatedBackground = () => {
             top: `${particle.y}%`,
             width: particle.size,
             height: particle.size,
+            willChange: 'transform, opacity',
           }}
+          initial={{ y: 0, x: 0, opacity: 0.3 }}
           animate={{
             y: [0, -30, 0],
             x: [0, Math.random() * 20 - 10, 0],
@@ -106,6 +118,8 @@ const AnimatedBackground = () => {
       {/* Animated gradient overlay */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-purple-50/40 to-cyan-50/80 dark:from-blue-950/30 dark:via-purple-950/20 dark:to-cyan-950/30"
+        style={{ willChange: 'opacity' }}
+        initial={{ opacity: 0.6 }}
         animate={{
           opacity: [0.6, 0.9, 0.6],
         }}
