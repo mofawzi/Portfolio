@@ -1,53 +1,54 @@
-import { motion } from 'framer-motion';
+import Reveal, { SectionHeader } from './Reveal';
 import { experiences } from '../data/resume';
 
-const Experience = () => {
+const Experience = () => (
+  <section id="experience" className="section">
+    <div className="container-page">
+      <SectionHeader index="02" label="Experience" title="Where I've worked.">
+        Government e-services and Islamic digital banking, from component libraries to release pipelines.
+      </SectionHeader>
 
-  return (
-    <section id="experience" className="relative py-20 px-6 bg-gray-50/40 dark:bg-gray-900/40 z-10">
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Experience
-        </motion.h2>
+      <ol className="relative space-y-6">
+        {experiences.map((exp, i) => (
+          <Reveal as="li" key={exp.company} delay={i * 0.05} className="card grid gap-6 p-6 sm:p-8 lg:grid-cols-[14rem_1fr] lg:gap-10">
+            <div>
+              <p className="font-mono text-sm text-ink-500 dark:text-ink-400">{exp.period}</p>
+              <p className="mt-1 text-sm text-ink-400 dark:text-ink-500">{exp.location}</p>
+              {exp.current && (
+                <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  Current
+                </span>
+              )}
+            </div>
 
-        <div className="space-y-8">
-          {experiences.length === 0 ? (
-            <p className="text-center text-gray-600 dark:text-gray-400">
-              Experience section will be populated with your resume data
-            </p>
-          ) : (
-            experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
-                  {exp.title}
-                </h3>
-                <p className="text-lg text-blue-600 dark:text-blue-400 mb-1">{exp.company} • {exp.location}</p>
-                <p className="text-base text-gray-600 dark:text-gray-400 mb-4">{exp.period}</p>
-                <ul className="list-disc list-inside text-base text-gray-700 dark:text-gray-300 space-y-2">
-                  {exp.responsibilities?.map((resp, idx) => (
-                    <li key={idx}>{resp}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))
-          )}
-        </div>
-      </div>
-    </section>
-  );
-};
+            <div>
+              <h3 className="text-xl font-semibold tracking-tight text-ink-900 dark:text-white">
+                {exp.title} <span className="text-accent-600 dark:text-accent-400">· {exp.company}</span>
+              </h3>
+              {exp.companyFull && <p className="mt-0.5 text-sm text-ink-500 dark:text-ink-400">{exp.companyFull}</p>}
+              <p className="mt-3 text-base text-ink-700 dark:text-ink-300">{exp.summary}</p>
+
+              <ul className="mt-5 space-y-3">
+                {exp.highlights.map((h) => (
+                  <li key={h.slice(0, 32)} className="relative pl-5 text-[0.95rem] leading-relaxed text-ink-600 dark:text-ink-400">
+                    <span aria-hidden className="absolute left-0 top-[0.7em] h-1.5 w-1.5 rounded-full bg-accent-500/70" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+
+              <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
+                {exp.tech.map((t) => (
+                  <li key={t} className="chip">{t}</li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        ))}
+      </ol>
+    </div>
+  </section>
+);
 
 export default Experience;

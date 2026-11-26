@@ -1,56 +1,29 @@
-import { motion } from 'framer-motion';
+import Reveal, { SectionHeader } from './Reveal';
 import { skillCategories } from '../data/resume';
 
-const Skills = () => {
+const Skills = () => (
+  <section id="skills" className="section">
+    <div className="container-page">
+      <SectionHeader index="04" label="Skills" title="Tools I use to ship." />
 
-  return (
-    <section id="skills" className="relative py-20 px-6 bg-white/40 dark:bg-gray-800/40 z-10">
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Skills
-        </motion.h2>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          {skillCategories.length === 0 ? (
-            <p className="text-center text-gray-600 dark:text-gray-400 col-span-2">
-              Skills section will be populated with your resume data
-            </p>
-          ) : (
-            skillCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                  {category.name}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills?.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-base"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))
-          )}
-        </div>
+      <div className="grid gap-px overflow-hidden rounded-2xl border border-ink-200/80 bg-ink-200/80 sm:grid-cols-2 lg:grid-cols-3 dark:border-white/10 dark:bg-white/10">
+        {skillCategories.map((cat, i) => (
+          <Reveal
+            key={cat.name}
+            delay={(i % 3) * 0.05}
+            className={`bg-white/90 p-6 dark:bg-ink-950/90 ${i === skillCategories.length - 1 && skillCategories.length % 3 === 1 ? 'sm:col-span-2 lg:col-span-3' : ''}`}
+          >
+            <h3 className="text-base font-semibold text-ink-900 dark:text-white">{cat.name}</h3>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {cat.skills.map((s) => (
+                <li key={s} className="chip">{s}</li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Skills;

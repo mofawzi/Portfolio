@@ -1,12 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Mohamed Fawzy - Senior Frontend Engineer with 6+ years of experience in React, Angular, and TypeScript" />
+    <title>Mohamed Fawzy · Senior Frontend Engineer</title>
+    <meta name="description" content="Mohamed Fawzy, Senior Frontend Engineer in Riyadh with 7+ years building enterprise React, Next.js and TypeScript platforms for Saudi government and financial services. Co-founder of Tripzle." />
     <meta name="author" content="Mohamed Fawzy" />
-    <title>Mohamed Fawzy | Portfolio</title>
+    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="canonical" href="https://mohamedfawzy96.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mohamedfawzy96.vercel.app/" />
+    <meta property="og:title" content="Mohamed Fawzy · Senior Frontend Engineer" />
+    <meta property="og:description" content="7+ years building enterprise React, Next.js and TypeScript platforms. Frontend architecture, performance and cross-platform. Co-founder of Tripzle." />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var dark = saved ? saved === 'dark' : !window.matchMedia('(prefers-color-scheme: light)').matches;
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

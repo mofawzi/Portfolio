@@ -1,66 +1,182 @@
-import { motion } from 'framer-motion';
-import { projects } from '../data/resume';
+import Reveal, { SectionHeader } from './Reveal';
+import { caseStudies, featuredProject as tp, openSource } from '../data/resume';
+import { ArrowUpRight, GitHub } from './icons';
+import desktopShot from '../assets/tripzle-desktop.webp';
+import mobileShot from '../assets/tripzle-mobile.webp';
 
-const Projects = () => {
-  return (
-    <section id="projects" className="relative py-20 px-6 bg-white/40 dark:bg-gray-800/40 z-10">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Projects
-        </motion.h2>
+// Live screenshots of tripzle.com (English desktop + Arabic mobile), captured Nov 2026.
+const TripzlePreview = () => (
+  <a
+    href="https://tripzle.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    tabIndex={-1}
+    aria-hidden
+    className="group relative order-first block h-full min-h-[24rem] lg:order-none overflow-hidden rounded-xl bg-gradient-to-br from-[#255DD2] via-[#1c47a8] to-[#102142] sm:min-h-[30rem]"
+  >
+    <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/15 blur-3xl" />
+    <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-sky-300/20 blur-3xl" />
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-shadow"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="p-6">
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {project.name}
-                </h3>
-                <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies?.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded text-base"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                  View on GitHub
+    {/* Desktop browser window, bleeding off the right edge */}
+    <div className="absolute left-6 top-8 w-[125%] overflow-hidden rounded-lg bg-white shadow-2xl shadow-black/40 ring-1 ring-white/20 transition-transform duration-500 ease-out group-hover:-translate-y-1 sm:left-8 sm:top-10">
+      <div className="flex h-7 items-center gap-1.5 border-b border-ink-200 bg-ink-100 px-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+        <span className="ml-3 rounded-md bg-white px-3 py-0.5 font-mono text-[0.65rem] text-ink-500">tripzle.com</span>
+      </div>
+      <img
+        src={desktopShot}
+        alt=""
+        width={1440}
+        height={900}
+        loading="lazy"
+        decoding="async"
+        className="block w-full"
+      />
+    </div>
+
+    {/* Phone, Arabic RTL version */}
+    <div className="absolute bottom-6 right-6 w-[34%] max-w-[11.5rem] overflow-hidden rounded-[1.75rem] border-[6px] border-ink-950 bg-ink-950 shadow-2xl shadow-black/50 transition-transform duration-500 ease-out group-hover:-translate-y-2 sm:bottom-8 sm:right-8">
+      <img
+        src={mobileShot}
+        alt=""
+        width={780}
+        height={1688}
+        loading="lazy"
+        decoding="async"
+        className="block w-full rounded-[1.25rem]"
+      />
+    </div>
+
+    <span className="absolute bottom-6 left-6 hidden items-center gap-2 rounded-full bg-black/40 sm:inline-flex px-3 py-1 font-mono text-[0.7rem] text-white/90 backdrop-blur sm:bottom-8 sm:left-8">
+      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+      Live · Web · iOS · Android
+    </span>
+  </a>
+);
+
+const Projects = () => (
+  <section id="work" className="section">
+    <div className="container-page">
+      <SectionHeader index="03" label="Selected work" title="Products I've built and led.">
+        A product I co-founded, and the platforms I&apos;ve shipped for government and banking clients.
+      </SectionHeader>
+
+      {/* Featured: Tripzle */}
+      <Reveal as="article" className="card grid gap-8 p-4 sm:p-6 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
+        <div className="flex flex-col p-2 sm:p-4">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span className="rounded-full bg-accent-500/10 px-2.5 py-0.5 text-xs font-medium text-accent-700 dark:text-accent-300">
+              Featured · Co-founded
+            </span>
+            <span className="font-mono text-xs text-ink-500 dark:text-ink-400">{tp.period}</span>
+          </div>
+          <h3 className="mt-4 text-3xl font-semibold tracking-tight text-ink-900 dark:text-white">{tp.name}</h3>
+          <p className="mt-1 text-sm font-medium text-ink-500 dark:text-ink-400">{tp.role}</p>
+          <p className="mt-4 text-base leading-relaxed text-ink-700 dark:text-ink-300">{tp.description}</p>
+
+          <ul className="mt-6 space-y-3">
+            {tp.highlights.map((h) => (
+              <li key={h.slice(0, 32)} className="relative pl-5 text-[0.95rem] leading-relaxed text-ink-600 dark:text-ink-400">
+                <span aria-hidden className="absolute left-0 top-[0.7em] h-1.5 w-1.5 rounded-full bg-accent-500/70" />
+                {h}
+              </li>
+            ))}
+          </ul>
+
+          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
+            {tp.tech.map((t) => (
+              <li key={t} className="chip">{t}</li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-wrap gap-3 lg:mt-auto lg:pt-8">
+            {tp.links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={l.primary ? 'btn-primary' : 'btn-secondary'}
+              >
+                {l.label}
+                <ArrowUpRight width={16} height={16} />
+              </a>
+            ))}
+          </div>
+        </div>
+        <TripzlePreview />
+      </Reveal>
+
+      {/* Professional case studies */}
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        {caseStudies.map((c, i) => (
+          <Reveal as="article" key={c.name} delay={i * 0.05} className="card flex flex-col p-6 sm:p-8">
+            <p className="font-mono text-xs uppercase tracking-wider text-ink-500 dark:text-ink-400">{c.context}</p>
+            <h3 className="mt-2 flex items-center gap-2 text-xl font-semibold tracking-tight text-ink-900 dark:text-white">
+              {c.link ? (
+                <a href={c.link} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-1.5 hover:text-accent-600 dark:hover:text-accent-400">
+                  {c.name}
+                  <ArrowUpRight width={18} height={18} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+              ) : (
+                c.name
+              )}
+            </h3>
+            <p className="mt-3 text-[0.95rem] leading-relaxed text-ink-600 dark:text-ink-400">{c.description}</p>
+            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-ink-800 dark:text-ink-200">
+              {c.metrics.map((m) => (
+                <li key={m} className="inline-flex items-center gap-2">
+                  <span aria-hidden className="h-1 w-1 rounded-full bg-accent-500" />
+                  {m}
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-auto flex flex-wrap gap-2 pt-6" aria-label="Technologies">
+              {c.tech.map((t) => (
+                <li key={t} className="chip">{t}</li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
+      </div>
+
+      {/* Earlier open-source */}
+      <Reveal className="mt-12">
+        <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-ink-500 dark:text-ink-400">Earlier open-source projects</h3>
+        <ul className="mt-4 divide-y divide-ink-200/80 border-y border-ink-200/80 dark:divide-white/10 dark:border-white/10">
+          {openSource.map((p) => (
+            <li key={p.name} className="grid gap-1 py-4 sm:grid-cols-[12rem_1fr_auto] sm:items-center sm:gap-6">
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-ink-900 hover:text-accent-600 dark:text-white dark:hover:text-accent-400"
+              >
+                {p.name}
+              </a>
+              <p className="text-sm text-ink-600 dark:text-ink-400">
+                {p.description} <span className="text-ink-400 dark:text-ink-500">· {p.tech.join(', ')}</span>
+              </p>
+              <div className="mt-1 flex items-center gap-4 text-sm sm:mt-0">
+                {p.demo && (
+                  <a href={p.demo} target="_blank" rel="noopener noreferrer" className="link-muted inline-flex items-center gap-1" aria-label={`${p.name} live demo`}>
+                    Live
+                    <ArrowUpRight width={14} height={14} />
+                  </a>
+                )}
+                <a href={p.github} target="_blank" rel="noopener noreferrer" className="link-muted inline-flex items-center gap-1.5" aria-label={`${p.name} source code on GitHub`}>
+                  <GitHub width={16} height={16} />
+                  Code
                 </a>
               </div>
-            </motion.div>
+            </li>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+        </ul>
+      </Reveal>
+    </div>
+  </section>
+);
 
 export default Projects;

@@ -1,160 +1,90 @@
-# Mohamed Fawzy - Portfolio
+# Mohamed Fawzy · Senior Frontend Engineer
 
-🌐 **Live Website:** [https://mohamedfawzy96.vercel.app/](https://mohamedfawzy96.vercel.app/)
+**Live site:** [mohamedfawzy96.vercel.app](https://mohamedfawzy96.vercel.app/)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/mohamed-fawzi/)
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=flat&logo=gmail)](mailto:mohamedfawzy.dev@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green?style=flat&logo=vercel)](https://mohamedfawzy96.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mohamed--fawzi-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/mohamed-fawzi/)
+[![Email](https://img.shields.io/badge/Email-mohamedfawzy.dev%40gmail.com-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:mohamedfawzy.dev@gmail.com)
+[![Tripzle](https://img.shields.io/badge/Co--founder-Tripzle-255DD2?style=flat)](https://tripzle.com)
 
----
+Senior Frontend Engineer in Riyadh with **7+ years** building enterprise web and cross-platform applications for Saudi government and financial-services platforms. I specialize in **React, Next.js and TypeScript**, with deep experience in frontend architecture, legacy modernization, performance optimization, monorepos and mobile integrations (Angular, Ionic, Capacitor).
 
-## 👨‍💻 About Me
-
-Senior Frontend Engineer from Alexandria, Egypt, currently based in Riyadh, Saudi Arabia, with **6+ years of experience** building high-performance, scalable, and accessible web applications. Expert in React, Angular, TypeScript, and modern frontend architecture, with a strong focus on clean code, performance optimization, and seamless backend integration.
-
-I specialize in creating enterprise-level applications for the financial and government sectors, with extensive experience in cross-platform development, state management, and building reusable component libraries.
+I also co-founded **[Tripzle](https://tripzle.com)**, an Arabic-first travel platform for the MENA region, which I build end to end across web, iOS, Android, backend and infrastructure.
 
 ---
 
-## 🚀 Tech Stack
+## Experience
 
-### Frontend Development
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+### Senior Frontend Engineer · SDAIA
+*Sep 2023 – Present · Riyadh, KSA*
 
-### UI & Styling
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+Saudi Business Center ([business.sa](https://business.sa)): Saudi Arabia's unified business services platform for investors.
 
-### Backend & Databases
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+- Led frontend development within an 11-engineer team; the platform serves **100K+ users** and processes **200K+ requests monthly**.
+- Cut initial page load from **~6s to 2–3s** through lazy loading, memoization, bundle-size optimization and more efficient data fetching.
+- Modernized large legacy React apps from class components and Redux Saga to functional components and modern React patterns.
+- Helped migrate established applications to a monorepo with reusable shared components.
+- Delivered digital licensing services for the General Authority of Media, Ministry of Health, General Entertainment Authority, Saudi Ports Authority and Ministry of Industry and Mineral Resources.
 
-### Mobile Development
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
-![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+### Software Developer · Azentio
+*Mar 2022 – Sep 2023 · Cairo, Egypt*
 
-### Tools & Deployment
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+- Architected and delivered UI for the OMNI Islamic banking platform across web, iOS and Android (Angular, Ionic, SASS).
+- Owned shared components used across banking clients, including forms, masked inputs and security-sensitive UI.
+- Implemented biometric authentication from scratch and led the migration from Cordova to Capacitor.
+- Owned mobile release infrastructure: Firebase environments, APK/IPA builds, signing, analytics, crash reporting and push notifications.
+
+### Frontend Developer · Path Solutions
+*Jun 2019 – Mar 2022 · Cairo, Egypt*
+
+- Delivered cross-platform frontend for the OMNI Islamic digital banking platform.
+- Built white-label banking interfaces tailored to each institution's branding and regulatory requirements.
+- Built report-generation modules with JasperReports.
 
 ---
 
-## 💼 Professional Experience
+## Featured project: Tripzle
 
-### **Senior Frontend Engineer** @ SDAIA
-*Sep 2023 - Present | Riyadh, KSA*
+**Co-founder & Lead Engineer · Jan 2026 – Present** · [tripzle.com](https://tripzle.com) · [App Store](https://apps.apple.com/app/id6821729454) · [Google Play](https://play.google.com/store/apps/details?id=com.tripzle.app)
 
-- Led frontend development for the **Saudi Business Center E-service**, serving **100K+ users** and processing **200K+ requests monthly** using React, TypeScript, Vite, and Zustand
-- Created multiple license issuance applications (Media, GEA, MOH, MAWANI, MIM) from scratch
-- Migrated legacy projects to modern Monorepo structure with reusable shared components
-- Developed E-Business Magazine platform using Bun, React, TypeScript, and Google Maps API
+An Arabic-first travel comparison and discovery platform for MENA. One search compares flights, hotels, car rentals, activities and eSIMs across partner sites, alongside a flight tracker and destination guides.
 
-### **Software Developer** @ Azentio
-*Mar 2022 - Sep 2023 | Cairo, Egypt*
+- Web (Next.js) and mobile (React Native / Expo) apps with bilingual Arabic/English experiences and a shared design system.
+- Backend services in Node.js/Express and NestJS/Prisma/PostgreSQL, with a multi-provider integration layer, SSE streaming and Redis caching.
+- Turborepo monorepo of shared packages, CI/CD and over-the-air mobile updates.
 
-- Architected cross-platform Islamic banking system (OMNI) for multiple financial institutions using Angular, Ionic, and SASS
-- Built reusable component library reducing development time across banking clients
-- Implemented biometric authentication and led migration from Cordova to Capacitor
-- Managed mobile deployment pipeline including APK/IPA builds, code signing, and Firebase integration
-
-### **Frontend Developer** @ Path Solutions
-*Jun 2020 - Mar 2022 | Cairo, Egypt*
-
-- Delivered UI implementations for cross-platform Islamic digital banking system across web, iOS, and Android
-- Developed customized white-label banking interfaces for individual financial institutions
-- Created reusable component library standardizing development across teams
+**Earlier open-source work:** [Shopilla](https://github.com/mofawzi/shopilla) (MERN e-commerce with PayPal) · [DevBook](https://github.com/mofawzi/DevBook) (MERN social network for developers) · [Netflix Clone](https://github.com/mofawzi/netflix-clone-react) ([live](https://netflix-442be.web.app)) · [Item Catalog](https://github.com/mofawzi/Item-Catalog) (Flask + OAuth)
 
 ---
 
-## 🎓 Education
+## Skills
 
-**B.Sc. Computer Science & Information Systems**
-Cairo University | 2014 - 2018
+| Area | Tools |
+|---|---|
+| Frontend & Architecture | JavaScript, TypeScript, React, Next.js, Angular, Micro Frontends, Monorepos |
+| Performance & Quality | Core Web Vitals, lazy loading, memoization, unit & integration testing, Cypress |
+| State & Data | Zustand, Redux, NgRx, Context API, REST APIs, SWR, caching, JWT auth |
+| Mobile | React Native, Expo, Ionic, Capacitor, native modules, biometric auth, push notifications, Firebase |
+| UI & Styling | Tailwind CSS, SASS/SCSS, shadcn/ui, Angular Material, Styled Components, Framer Motion |
+| Backend & Integration | Node.js, NestJS, Express, Prisma, PostgreSQL, MongoDB, Redis, SSE |
+| Tools & Delivery | Git, Docker, Vite, Webpack, Bun, Turborepo, CI/CD, AWS, Azure, Vercel |
 
-### Certifications
-- Frontend Development Diploma - ITI
-- Fullstack Nanodegree Program - Udacity
-- JavaScript Algorithms & Data Structures - freeCodeCamp
-- Node.js Express, MongoDB Bootcamp - Udemy
-
----
-
-## 🛠️ Featured Projects
-
-### [Shopilla](https://github.com/mofawzi/shopilla)
-eCommerce platform built with the MERN stack & Redux
-- **Tech:** MongoDB, Express.js, React, Node.js, Redux
-
-### [Kanban Board](https://github.com/mofawzi/Kanban-angular-drag-drop)
-Kanban board with drag & drop functionality using Angular CDK
-- **Tech:** Angular, TypeScript, Angular CDK
-
-### [Angular Task Tracker](https://github.com/mofawzi/angular-task-tracker)
-A simple app to keep track of your tasks
-- **Tech:** Angular, TypeScript
-
-### [Netflix Clone](https://github.com/mofawzi/netflix-clone-react)
-Netflix UI clone built with React
-- **Tech:** React, JavaScript, CSS
-
-### [Portfolio Website](https://github.com/mofawzi/Portfolio)
-Modern, animated portfolio website with dark mode
-- **Tech:** React, Vite, Tailwind CSS, Framer Motion
+**Education:** B.Sc. Computer Science & Information Systems, Cairo University (2014 – 2018)
+**Languages:** Arabic (native), English (advanced)
 
 ---
 
-## 📊 GitHub Stats
+## About this site
 
-![Mohamed's GitHub stats](https://github-readme-stats.vercel.app/api?username=mofawzi&show_icons=true&theme=dark)
+Built with **React 19**, **Vite**, **Tailwind CSS** and **Framer Motion**, deployed on **Vercel**.
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mofawzi&layout=compact&theme=dark)
+- All content lives in [`src/data/resume.js`](src/data/resume.js); components in `src/components/` only render it.
+- Light and dark themes, remembered between visits and applied before first paint.
+- Respects the system "reduce motion" setting.
+- Résumé PDF served from `public/Mohamed-Fawzy-Resume.pdf`.
 
----
-
-## 📫 Get In Touch
-
-- 🌐 Portfolio: [mohamedfawzy96.vercel.app](https://mohamedfawzy96.vercel.app/)
-- 💼 LinkedIn: [mohamed-fawzi](https://www.linkedin.com/in/mohamed-fawzi/)
-- 📧 Email: mohamedfawzy.dev@gmail.com
-- 📍 Location: Riyadh, Saudi Arabia
-
----
-
-## 🌟 About This Portfolio
-
-This portfolio is built with modern web technologies:
-- **React 19** for UI components
-- **Vite** for blazing-fast builds
-- **Tailwind CSS** for styling
-- **Framer Motion** for smooth animations
-- **Deployed on Vercel** with automatic CI/CD
-
-The portfolio features:
-- 🎨 Beautiful animated background with gradient orbs and floating particles
-- 🌗 Dark/Light mode toggle
-- 📱 Fully responsive design
-- ⚡ Optimized performance
-- 🎯 Smooth scroll animations
-
----
-
-<div align="center">
-
-### ⭐ Star this repo if you like it!
-
-Made with ❤️ by Mohamed Fawzy
-
-</div>
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build into dist/
+npm run lint
+```

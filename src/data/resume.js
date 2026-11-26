@@ -1,160 +1,204 @@
 export const personalInfo = {
   name: "Mohamed Fawzy",
+  firstName: "Mohamed",
   title: "Senior Frontend Engineer",
+  specialty: "Frontend Architecture",
+  headline:
+    "I build fast, scalable frontends for government, fintech and travel platforms.",
   email: "mohamedfawzy.dev@gmail.com",
   phone: "+966550615504",
   location: "Riyadh, Saudi Arabia",
+  origin: "Alexandria, Egypt",
   linkedin: "https://www.linkedin.com/in/mohamed-fawzi/",
   github: "https://github.com/mofawzi",
-  summary: "Senior Frontend Engineer from Alexandria, Egypt. Currently based in Riyadh, Saudi Arabia, with 6+ years of experience building high-performance, scalable, and accessible web applications. Expert in React, Angular, TypeScript, and modern frontend architecture, with strong focus on clean code, performance optimization, and seamless backend integration."
+  website: "https://mohamedfawzy96.vercel.app",
+  resume: "/Mohamed-Fawzy-Resume.pdf",
+  summary: [
+    "Senior Frontend Engineer with 7+ years of experience building enterprise web and cross-platform applications for Saudi government and financial-services platforms. I specialize in React, Next.js and TypeScript, with deep experience in frontend architecture, legacy modernization, performance optimization, monorepos and mobile integrations (Angular, Ionic, Capacitor).",
+    "Beyond my day job, I co-founded Tripzle, an Arabic-first travel platform for the MENA region, where I own the product end to end: web, iOS and Android apps, backend services and infrastructure.",
+  ],
 };
+
+// Hero stats. Numbers count up when scrolled into view; `display` is the final text when it isn't
+// a plain number (page load counts down from 6 to 2, then settles on "2–3s").
+export const stats = [
+  { from: 0, to: 7, suffix: "+", label: "Years building for the web" },
+  { from: 0, to: 100, suffix: "K+", label: "Users on platforms I've led" },
+  { from: 0, to: 200, suffix: "K+", label: "Monthly requests served" },
+  { from: 6, to: 2, suffix: "s", display: "2–3s", label: "Page load, down from ~6s" },
+];
 
 export const experiences = [
   {
     title: "Senior Frontend Engineer",
     company: "SDAIA",
+    companyFull: "Saudi Data & AI Authority",
     location: "Riyadh, KSA",
-    period: "Sep 2023 - Present",
-    responsibilities: [
-      "Contributed to the E-services platform of the business.sa using React and TypeScript, integrating REST APIs and applying testing to ensure reliability and performance.",
-      "Led frontend development team in building an E-service for the Saudi Business Center, enabling investors across Saudi Arabia and internationally to obtain commercial records for companies and establishments, leveraging Vite, TypeScript, React, and Zustand to deliver a high-performance, scalable solution serving 100K+ users and processing 200K+ requests monthly.",
-      "Collaborated with the frontend team to migrate a complex legacy project to a modern Monorepo structure with reusable shared components, enhancing code quality, scalability, and development efficiency.",
-      "Contributed within a cross-functional frontend and backend team to the development of the E-Business Magazine platform using Bun, React, TypeScript, Zustand, Altcha, and Google Maps API.",
-      "Created the (Media, GEA, MOH, MAWANI, MIM) Licenses Issuance applications from scratch, delivering robust and high-quality user-facing solutions using Vite, TypeScript, React and Zustand."
-    ]
+    period: "Sep 2023 – Present",
+    current: true,
+    summary:
+      "Saudi Business Center (business.sa): Saudi Arabia's unified business services platform for investors, covering commercial records, business licensing and government digital services.",
+    highlights: [
+      "Led frontend development within an 11-engineer team building Saudi Business Center digital services for investors across Saudi Arabia; the platform serves 100K+ users and processes 200K+ requests monthly.",
+      "Modernized large-scale legacy React applications by migrating class-based components and Redux Saga to functional components and modern React patterns, reducing unnecessary re-renders and improving maintainability.",
+      "Cut initial page load from ~6s to 2–3s through lazy loading, memoization, bundle-size optimization and more efficient API data fetching.",
+      "Contributed to migrating complex established applications to a monorepo architecture, building reusable shared components that improved code reuse and consistency across teams.",
+      "Delivered digital licensing services for multiple government authorities: General Authority of Media, Ministry of Health, General Entertainment Authority, Saudi Ports Authority (MAWANI) and Ministry of Industry and Mineral Resources.",
+      "Built Digital Branch Licensing, Delegation Management and e-authentication workflows, and a Bash-based build and deployment automation workflow for internal servers.",
+    ],
+    tech: ["React", "TypeScript", "Vite", "Zustand", "Redux", "Monorepo", "REST APIs"],
   },
   {
     title: "Software Developer",
     company: "Azentio",
     location: "Cairo, Egypt",
-    period: "Mar 2022 - Sep 2023",
-    responsibilities: [
-      "Architected and delivered UI implementations for a cross-platform Islamic banking system (OMNI) serving multiple financial institutions across web, iOS, and Android platforms using Angular, Ionic, and SASS.",
-      "Engineered a reusable component library streamlining development workflows by creating shared Angular/Ionic components for forms, masked inputs, and UI elements, reducing implementation time and ensuring consistency across banking clients.",
-      "Implemented biometric authentication for native iOS and Android applications using Cordova plugins, and led the migration from Cordova to Capacitor, enhancing app performance and modernizing the mobile architecture.",
-      "Managed end-to-end mobile deployment pipeline, including APK/IPA build configuration, code signing, and Firebase integration for analytics, crash reporting, and push notifications across multiple banking clients.",
-      "Collaborated cross-functionally with backend teams to develop RESTful services using Java and Spring Framework, ensuring seamless integration between frontend applications and MySQL databases.",
-      "Built SOAP-based integration APIs using Java and Spring to enable secure communication with third-party financial services and external banking systems."
-    ]
+    period: "Mar 2022 – Sep 2023",
+    summary:
+      "OMNI: a cross-platform Islamic digital banking platform serving multiple financial institutions across web, iOS and Android.",
+    highlights: [
+      "Architected and delivered UI for the OMNI Islamic banking platform across web, iOS and Android using Angular, Ionic and SASS.",
+      "Owned shared components used across banking applications, including forms, masked inputs and security-sensitive UI, standardizing implementation across clients.",
+      "Implemented biometric authentication from scratch for native iOS and Android apps and led the migration from Cordova to Capacitor.",
+      "Owned mobile release infrastructure across banking clients: Firebase environments, APK/IPA generation, signing, analytics, crash reporting and push notifications.",
+    ],
+    tech: ["Angular", "Ionic", "Capacitor", "SASS", "Firebase", "TypeScript"],
   },
   {
     title: "Frontend Developer",
     company: "Path Solutions",
     location: "Cairo, Egypt",
-    period: "Jun 2020 - Mar 2022",
-    responsibilities: [
-      "Delivered comprehensive UI implementations for a cross-platform Islamic digital banking system (OMNI), providing seamless user experiences across web, iOS, and Android applications using Angular, Ionic, and SASS.",
-      "Developed customized, white-label banking interfaces tailored to individual financial institutions' branding and regulatory requirements, utilizing Angular, Ionic, and SASS to ensure Sharia-compliant digital banking experiences.",
-      "Developed a reusable component library featuring forms, masked inputs, and common UI elements, reducing development time by standardizing Ionic component implementation across development teams.",
-      "Collaborated with the Reporting team to develop and maintain report generation modules using JasperReports, enabling dynamic report creation and updates within the internal reporting system."
-    ]
-  }
+    period: "Jun 2019 – Mar 2022",
+    summary:
+      "Islamic banking software vendor; frontend for the OMNI digital banking platform.",
+    highlights: [
+      "Delivered cross-platform frontend solutions for the OMNI Islamic digital banking platform across web, iOS and Android.",
+      "Developed white-label banking interfaces customized to each financial institution's branding and regulatory requirements.",
+      "Built and maintained dynamic report-generation modules with the Reporting team using JasperReports.",
+    ],
+    tech: ["Angular", "Ionic", "SASS", "JasperReports"],
+  },
 ];
 
-export const education = [
+// Featured project shown as the large card at the top of the Work section.
+export const featuredProject = {
+  name: "Tripzle",
+  role: "Co-founder & Lead Engineer",
+  period: "Jan 2026 – Present",
+  tagline: "Compare more. Travel better.",
+  description:
+    "An Arabic-first travel comparison and discovery platform built around how the Middle East and North Africa travels. One search compares flights, hotels, car rentals, activities and eSIMs across partner sites, alongside a live flight tracker and destination guides, then hands the traveller off to book directly with the provider.",
+  highlights: [
+    "Built the platform end to end: a Next.js web app and React Native (Expo) apps for iOS and Android, with bilingual Arabic/English RTL-first experiences and a shared design system.",
+    "Developed backend services with Node.js/Express and NestJS/Prisma/PostgreSQL, including a multi-provider integration layer, SSE streaming of search results and Redis caching.",
+    "Designed the architecture and delivery: a Turborepo monorepo of shared packages (UI, i18n, config), CI/CD pipelines and over-the-air mobile updates.",
+  ],
+  tech: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "React Native",
+    "Expo",
+    "NestJS",
+    "Prisma",
+    "PostgreSQL",
+    "Redis",
+    "Turborepo",
+  ],
+  links: [
+    { label: "tripzle.com", href: "https://tripzle.com", primary: true },
+    { label: "App Store", href: "https://apps.apple.com/app/id6821729454" },
+    {
+      label: "Google Play",
+      href: "https://play.google.com/store/apps/details?id=com.tripzle.app",
+    },
+  ],
+};
+
+// Professional case studies (client / employer work).
+export const caseStudies = [
   {
-    degree: "B.Sc. Computer Science & Information Systems",
-    institution: "Cairo University",
-    period: "2014 - 2018"
-  }
+    name: "Saudi Business Center",
+    context: "SDAIA · business.sa",
+    description:
+      "E-services for investors to obtain commercial records and business licenses. Led the frontend of a high-traffic service and delivered licensing applications for five government authorities.",
+    metrics: ["100K+ users", "200K+ requests / month", "6s → 2–3s load"],
+    tech: ["React", "TypeScript", "Zustand", "Monorepo"],
+    link: "https://business.sa",
+  },
+  {
+    name: "OMNI Digital Banking",
+    context: "Azentio · Path Solutions",
+    description:
+      "White-label, Sharia-compliant digital banking for multiple financial institutions on web, iOS and Android, with biometric login and a shared component library.",
+    metrics: ["Web · iOS · Android", "Multi-bank white-label", "Cordova → Capacitor"],
+    tech: ["Angular", "Ionic", "Capacitor", "Firebase"],
+  },
 ];
 
-export const skillCategories = [
-  {
-    name: "Frontend Development",
-    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "Micro Frontends", "Monorepos", "Angular", "Ionic"]
-  },
-  {
-    name: "Backend Development",
-    skills: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "MongoDB", "SQL Databases", "Java"]
-  },
-  {
-    name: "State & Data Management",
-    skills: ["Context API", "Redux", "NGRX", "Zustand", "Firebase", "Supabase"]
-  },
-  {
-    name: "UI & Styling",
-    skills: ["Tailwind CSS", "Bootstrap", "Shadcn", "Angular Material", "PostCSS", "Styled Components", "SASS/SCSS", "Framer Motion"]
-  },
-  {
-    name: "Mobile Development",
-    skills: ["React Native", "Native Modules", "Push Notifications", "Expo", "Ionic"]
-  },
-  {
-    name: "Tools & Deployment",
-    skills: ["Vite", "Webpack", "Bun", "Azure", "AWS", "Docker", "Postman", "Git", "CI/CD Pipelines"]
-  },
-  {
-    name: "Testing & Quality",
-    skills: ["React Testing Library", "Cypress", "Unit & Integration Testing", "Core Web Vitals Optimization"]
-  }
-];
-
-export const certificates = [
-  {
-    name: "Frontend development diploma",
-    issuer: "ITI"
-  },
-  {
-    name: "Fullstack Nanodegree Program",
-    issuer: "Udacity"
-  },
-  {
-    name: "Javascript Algorithms & Data Structures",
-    issuer: "freeCodeCamp"
-  },
-  {
-    name: "Node.js Express, MongoDB Bootcamp",
-    issuer: "Udemy"
-  }
-];
-
-export const languages = [
-  "Arabic (Native)",
-  "English (Advanced)"
-];
-
-export const projects = [
+// Earlier open-source work, shown as a compact list. `demo` only where the live link still works.
+export const openSource = [
   {
     name: "Shopilla",
-    description: "eCommerce platform built with the MERN stack & Redux",
-    technologies: ["MongoDB", "Express.js", "React", "Node.js", "Redux"],
-    link: "https://github.com/mofawzi/shopilla",
-    github: "https://github.com/mofawzi/shopilla"
+    description: "Full-stack e-commerce store with JWT auth, product image uploads and PayPal checkout.",
+    tech: ["React", "Redux", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/mofawzi/shopilla",
   },
   {
-    name: "Kanban Board",
-    description: "Kanban board with drag & drop functionality using Angular CDK",
-    technologies: ["Angular", "TypeScript", "Angular CDK"],
-    link: "https://github.com/mofawzi/Kanban-angular-drag-drop",
-    github: "https://github.com/mofawzi/Kanban-angular-drag-drop"
-  },
-  {
-    name: "Angular Task Tracker",
-    description: "A simple app to keep track of your tasks",
-    technologies: ["Angular", "TypeScript"],
-    link: "https://github.com/mofawzi/angular-task-tracker",
-    github: "https://github.com/mofawzi/angular-task-tracker"
-  },
-  {
-    name: "Item Catalog",
-    description: "Udacity Full Stack Nanodegree Project - Web application for managing categorized items",
-    technologies: ["Python", "Flask", "SQL"],
-    link: "https://github.com/mofawzi/Item-Catalog",
-    github: "https://github.com/mofawzi/Item-Catalog"
+    name: "DevBook",
+    description: "Social network for developers: profiles, posts and comments, plus each user's latest GitHub repos via the GitHub API.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Passport JWT"],
+    github: "https://github.com/mofawzi/DevBook",
   },
   {
     name: "Netflix Clone",
-    description: "Netflix UI clone built with React",
-    technologies: ["React", "JavaScript", "CSS"],
-    link: "https://github.com/mofawzi/netflix-clone-react",
-    github: "https://github.com/mofawzi/netflix-clone-react"
+    description: "Streaming UI with live TMDB data, trailer playback and Firebase auth and hosting.",
+    tech: ["React", "Redux Toolkit", "Firebase", "TMDB API"],
+    github: "https://github.com/mofawzi/netflix-clone-react",
+    demo: "https://netflix-442be.web.app",
   },
   {
-    name: "Burger Builder",
-    description: "Interactive burger customization app built with React",
-    technologies: ["React", "JavaScript"],
-    link: "https://github.com/mofawzi/burger-builder",
-    github: "https://github.com/mofawzi/burger-builder"
-  }
+    name: "Item Catalog",
+    description: "Udacity Full Stack Nanodegree project: CRUD catalog with Google OAuth and per-user permissions.",
+    tech: ["Python", "Flask", "SQLAlchemy", "OAuth"],
+    github: "https://github.com/mofawzi/Item-Catalog",
+  },
+];
+
+export const education = {
+  degree: "B.Sc. Computer Science & Information Systems",
+  institution: "Cairo University",
+  period: "2014 – 2018",
+};
+
+export const languages = ["Arabic (Native)", "English (Advanced)"];
+
+export const skillCategories = [
+  {
+    name: "Frontend & Architecture",
+    skills: ["JavaScript", "TypeScript", "React", "Next.js", "Angular", "HTML/CSS", "Micro Frontends", "Monorepos"],
+  },
+  {
+    name: "Performance & Quality",
+    skills: ["Performance Optimization", "Core Web Vitals", "Lazy Loading", "Memoization", "Unit & Integration Testing", "Cypress"],
+  },
+  {
+    name: "State & Data",
+    skills: ["Zustand", "Redux", "NgRx", "Context API", "REST APIs", "SWR", "Caching", "JWT Auth"],
+  },
+  {
+    name: "Mobile",
+    skills: ["React Native", "Expo", "Ionic", "Capacitor", "Native Modules", "Biometric Auth", "Push Notifications", "Firebase"],
+  },
+  {
+    name: "UI & Styling",
+    skills: ["Tailwind CSS", "SASS/SCSS", "shadcn/ui", "Angular Material", "Styled Components", "Framer Motion", "Design Systems", "RTL / i18n"],
+  },
+  {
+    name: "Backend & Integration",
+    skills: ["Node.js", "NestJS", "Express", "Prisma", "PostgreSQL", "MongoDB", "Redis", "SSE", "Third-party APIs"],
+  },
+  {
+    name: "Tools & Delivery",
+    skills: ["Git", "Docker", "Vite", "Webpack", "Bun", "Turborepo", "CI/CD", "AWS", "Azure", "Vercel"],
+  },
 ];

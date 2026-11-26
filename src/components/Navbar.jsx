@@ -1,176 +1,156 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { personalInfo } from '../data/resume';
+import { Close, Download, Menu, Moon, Sun } from './icons';
 
-const Navbar = ({ darkMode, setDarkMode }) => {
+const navLinks = [
+  { name: 'About', id: 'about' },
+  { name: 'Experience', id: 'experience' },
+  { name: 'Work', id: 'work' },
+  { name: 'Skills', id: 'skills' },
+  { name: 'Contact', id: 'contact' },
+];
+
+const Navbar = ({ darkMode, onToggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [active, setActive] = useState('');
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      // Detect active section
-      const sections = ['about', 'experience', 'education', 'skills', 'projects', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      setActiveSection(current || '');
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  // Highlight the section crossing the upper part of the viewport.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    navLinks.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+    <header
+      className={`fixed inset-x-0 top-0 z-40 transition-[background-color,border-color,backdrop-filter] duration-300 ${
+        scrolled || open
+          ? 'border-b border-ink-200/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-ink-950/75'
+          : 'border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 shrink-0">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-blue-600 dark:text-blue-400"
-            >
-              <rect width="40" height="40" rx="8" fill="currentColor" fillOpacity="0.1" />
-              <rect x="1" y="1" width="38" height="38" rx="7" stroke="currentColor" strokeWidth="2" />
-              <text
-                x="50%"
-                y="50%"
-                dominantBaseline="middle"
-                textAnchor="middle"
-                fill="currentColor"
-                fontSize="18"
-                fontWeight="bold"
-                fontFamily="system-ui, -apple-system, sans-serif"
-              >
-                MF
-              </text>
-            </svg>
-            <span className="hidden sm:block text-xl font-bold text-gray-900 dark:text-white">
-              Mohamed Fawzy
-            </span>
-          </a>
+      <nav className="container-page flex h-16 items-center justify-between" aria-label="Main">
+        <a href="#top" className="group flex items-center gap-3" aria-label={`${personalInfo.name}, back to top`}>
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-ink-900 font-mono text-sm font-semibold text-white dark:bg-white dark:text-ink-950">
+            MF
+          </span>
+          <span className="hidden text-sm font-semibold tracking-tight sm:block">{personalInfo.name}</span>
+        </a>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+        <ul className="hidden items-center gap-1 md:flex">
+          {navLinks.map(({ name, id }) => (
+            <li key={id}>
               <a
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium transition-colors relative ${
-                  activeSection === link.href.slice(1)
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                href={`#${id}`}
+                aria-current={active === id ? 'true' : undefined}
+                className={`relative isolate rounded-full px-3.5 py-1.5 text-sm transition-colors ${
+                  active === id
+                    ? 'text-ink-900 dark:text-white'
+                    : 'text-ink-500 hover:text-ink-900 dark:text-ink-400 dark:hover:text-white'
                 }`}
               >
-                {link.name}
-                {activeSection === link.href.slice(1) && (
-                  <motion.div
-                    layoutId="activeSection"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                {active === id && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 -z-10 rounded-full bg-ink-100 dark:bg-white/10"
+                    transition={{ type: 'spring', stiffness: 400, damping: 34 }}
                   />
                 )}
+                {name}
               </a>
-            ))}
-          </div>
+            </li>
+          ))}
+        </ul>
 
-          {/* Right Side: Dark Mode Toggle */}
-          <div className="flex items-center gap-4">
-            <motion.button
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </motion.button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              {mobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
+        <div className="flex items-center gap-2">
+          <a href={personalInfo.resume} download className="btn-secondary hidden !px-4 !py-2 sm:inline-flex">
+            <Download width={16} height={16} />
+            Résumé
+          </a>
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            className="grid h-9 w-9 place-items-center rounded-full text-ink-600 transition-colors hover:bg-ink-100 dark:text-ink-300 dark:hover:bg-white/10"
+            aria-label={darkMode ? 'Switch to light theme' : 'Switch to dark theme'}
+          >
+            {darkMode ? <Sun width={18} height={18} /> : <Moon width={18} height={18} />}
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            className="grid h-9 w-9 place-items-center rounded-full text-ink-600 transition-colors hover:bg-ink-100 md:hidden dark:text-ink-300 dark:hover:bg-white/10"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+          >
+            {open ? <Close width={18} height={18} /> : <Menu width={18} height={18} />}
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
-            >
-              <div className="px-4 py-4 space-y-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-                {navLinks.map((link) => (
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden md:hidden"
+          >
+            <ul className="container-page space-y-1 pb-5 pt-2">
+              {navLinks.map(({ name, id }) => (
+                <li key={id}>
                   <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-4 py-2 rounded-lg text-base font-medium transition-colors ${
-                      activeSection === link.href.slice(1)
-                        ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400'
-                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    href={`#${id}`}
+                    onClick={() => setOpen(false)}
+                    className={`block rounded-lg px-3 py-2.5 text-base ${
+                      active === id
+                        ? 'bg-ink-100 text-ink-900 dark:bg-white/10 dark:text-white'
+                        : 'text-ink-600 dark:text-ink-300'
                     }`}
                   >
-                    {link.name}
+                    {name}
                   </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.nav>
+                </li>
+              ))}
+              <li className="pt-2">
+                <a href={personalInfo.resume} download className="btn-secondary w-full">
+                  <Download width={16} height={16} />
+                  Download résumé
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 
